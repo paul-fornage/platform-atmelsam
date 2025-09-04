@@ -1,3 +1,13 @@
+
+# For ClearCore users on Linux:
+
+Until this fork gets merged and official support for the ClearCore is added (if at all) make sure that you add the following to the [Platformio udev rules](https://docs.platformio.org/en/stable/core/installation/udev-rules.html) to include the Clearcore's VID and PIDs:
+```rules
+ATTRS{idVendor}=="2890", ATTRS{idProduct}=="[80]022", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
+```
+This is for Linux users only to let all users access the device
+
+
 # Atmel SAM: development platform for [PlatformIO](https://platformio.org)
 
 [![Build Status](https://github.com/platformio/platform-atmelsam/workflows/Examples/badge.svg)](https://github.com/platformio/platform-atmelsam/actions)
