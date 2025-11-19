@@ -65,7 +65,7 @@
       "type": "framework",
       "optional": true,
       "owner": "paul-fornage",
-      "version": "https://github.com/paul-fornage/ClearCore-Arduino-wrapper"
+      "version": "https://github.com/paul-fornage/ClearCore-Arduino-wrapper.git#0.0.1"
     },
     "framework-arduino-samd-seeed": {
       "type": "framework",
