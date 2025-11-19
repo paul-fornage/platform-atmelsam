@@ -1,6 +1,9 @@
 
 # For ClearCore users on Linux:
 
+Use `platform = https://github.com/paul-fornage/platform-atmelsam.git#v0.0.1` For ~stable branch.
+Stable as in it works on my machine, with the project I tried it on, as opposed to many commits that are known not working.
+
 Until this fork gets merged and official support for the ClearCore is added (if at all) make sure that you add the following to the [Platformio udev rules](https://docs.platformio.org/en/stable/core/installation/udev-rules.html) to include the Clearcore's VID and PIDs:
 ```rules
 ATTRS{idVendor}=="2890", ATTRS{idProduct}=="[80]022", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
