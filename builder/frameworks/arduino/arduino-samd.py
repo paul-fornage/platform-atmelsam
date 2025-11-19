@@ -190,16 +190,21 @@ elif VENDOR_CORE == "clearcore":
             os.path.join(FRAMEWORK_DIR, "cores", "arduino"),
             os.path.join(FRAMEWORK_DIR, "Teknic", "LwIP", "LwIP", "port", "include"),
             os.path.join(FRAMEWORK_DIR, "Teknic", "LwIP", "LwIP", "src", "include"),
-            os.path.join(FRAMEWORK_DIR, "Teknic", "libClearCore", "inc")
+            os.path.join(FRAMEWORK_DIR, "Teknic", "libClearCore", "inc"),
         ],
 
         LIBPATH=[
-            os.path.join(FRAMEWORK_DIR, "Teknic", "libClearCore", "Release"),
+            # Remove the path to the pre-compiled ClearCore library
+            # os.path.join(FRAMEWORK_DIR, "Teknic", "libClearCore", "Release"),
             os.path.join(FRAMEWORK_DIR, "Teknic", "LwIP", "Release")
         ],
 
         LIBS=[
-            "ClearCore",
+            # Build ClearCore from source instead of linking the pre-compiled binary
+            env.BuildLibrary(
+                os.path.join("$BUILD_DIR", "ClearCore"),
+                os.path.join(FRAMEWORK_DIR, "Teknic", "libClearCore", "src")
+            ),
             "LwIP"
         ]
     )
